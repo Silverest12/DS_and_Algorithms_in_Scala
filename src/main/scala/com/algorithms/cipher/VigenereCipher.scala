@@ -18,12 +18,4 @@ object VigenereCipher extends Cipher {
   def encode(shiftKeys: String)(msg: String): String = rotate(shiftKeys.toList.map(char2int))(msg)
 
   def decode(shiftKeys: String)(msg: String): String = rotate(shiftKeys.toList.map(-char2int(_)))(msg)
-
-  def main(args: Array[String]): Unit = {
-    val key = scala.io.StdIn.readLine().trim
-    val msg = scala.io.StdIn.readLine().trim
-    val str = encode(key)(msg)
-    println(str)
-    println(decode(key)(str))
-  }
 }
