@@ -2,6 +2,8 @@ package com.algorithms.cipher
 
 import scala.annotation.tailrec
 
+// Need to implement the cipher cracking algorithm
+// to be honest I got to look for it
 object VigenereCipher extends Cipher {
   private def rotate(shiftKeys: List[Int])(msg: String) : String = {
     @tailrec
