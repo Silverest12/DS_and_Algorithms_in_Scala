@@ -44,11 +44,12 @@ object Huffman {
   // so that it can be decoded later and also
   // speeds up the encoding process so it
   // doesn't need to process the tree each
-  // time
+  // time. Just reverse the output map in case
+  // of decoding making a Map[List[Bit], Char]
   def generateBitMap (text: String): Map[Char, List[Bit]] = {
     val frequencies = freq(text)
     val codeTree = merge(frequencies).head._1
-    
+
     frequencies.map(x => (x._1.value, encodeChar(codeTree, x._1.value))).toMap
   }
 
